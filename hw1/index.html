@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker - Трекер привычек</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <input type="radio" name="screen" id="screen-dashboard" checked class="screen-radio">
+    <input type="radio" name="screen" id="screen-form" class="screen-radio">
+    <input type="radio" name="screen" id="screen-profile" class="screen-radio">
+
+    <nav class="top-navigation">
+        <div class="top-navigation__container">
+            <label for="screen-dashboard" class="top-navigation__logo">Habit Tracker</label>
+            <div class="top-navigation__links">
+                <label for="screen-dashboard" class="top-navigation__link">Главная</label>
+                <label for="screen-profile" class="top-navigation__link">Профиль</label>
+            </div>
+            <label for="screen-form" class="top-navigation__add-btn">
+                <img src="icons/plus-circle.svg" alt="Добавить" class="icon">
+                <span>Добавить</span>
+            </label>
+        </div>
+    </nav>
+
+    <nav class="bottom-navigation">
+        <div class="bottom-navigation__container">
+            <label for="screen-dashboard" class="bottom-navigation__link">
+                <img src="icons/home.svg" alt="Главная" class="bottom-navigation__icon">
+                <span class="bottom-navigation__label">Главная</span>
+            </label>
+            <label for="screen-form" class="bottom-navigation__link">
+                <img src="icons/plus-circle.svg" alt="Добавить" class="bottom-navigation__icon">
+                <span class="bottom-navigation__label">Добавить</span>
+            </label>
+            <label for="screen-profile" class="bottom-navigation__link">
+                <img src="icons/user.svg" alt="Профиль" class="bottom-navigation__icon">
+                <span class="bottom-navigation__label">Профиль</span>
+            </label>
+        </div>
+    </nav>
+
+
+    <section id="dashboard" class="screen">
+        <div class="stats-overview">
+            <div class="stat-card">
+                <div class="stat-card__value">12</div>
+                <div class="stat-card__label">Выполнено сегодня</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__value">47</div>
+                <div class="stat-card__label">Серия подряд</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__value">15</div>
+                <div class="stat-card__label">Активных привычек</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <h2 class="filters__title">Фильтры</h2>
+            <div class="filters__group">
+                <label class="filter-radio">
+                    <input type="radio" name="filter" value="all" checked>
+                    <span class="filter-radio__label">Все</span>
+                </label>
+                <label class="filter-radio">
+                    <input type="radio" name="filter" value="active">
+                    <span class="filter-radio__label">Активные</span>
+                </label>
+                <label class="filter-radio">
+                    <input type="radio" name="filter" value="completed">
+                    <span class="filter-radio__label">Выполненные</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="habit-list">
+            <article class="habit-item">
+                <div class="habit-item__checkbox-wrapper">
+                    <input type="checkbox" id="habit-1" class="habit-item__checkbox">
+                    <label for="habit-1" class="habit-item__checkbox-label"></label>
+                </div>
+                <div class="habit-item__icon habit-item__icon--health"><img src="icons/dumbbell.svg" alt="Зарядка" class="icon"></div>
+                <div class="habit-item__content">
+                    <h3 class="habit-item__title">Утренняя зарядка</h3>
+                    <p class="habit-item__category">Здоровье</p>
+                    <div class="habit-item__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 75%"></div>
+                        </div>
+                        <span class="habit-item__progress-text">15/20 дней</span>
+                    </div>
+                </div>
+                <label for="screen-form" class="habit-item__edit" aria-label="Редактировать"><img src="icons/edit.svg" alt="Редактировать" class="icon"></label>
+            </article>
+
+            <article class="habit-item">
+                <div class="habit-item__checkbox-wrapper">
+                    <input type="checkbox" id="habit-2" class="habit-item__checkbox">
+                    <label for="habit-2" class="habit-item__checkbox-label"></label>
+                </div>
+                <div class="habit-item__icon habit-item__icon--productivity"><img src="icons/book-open.svg" alt="Чтение" class="icon"></div>
+                <div class="habit-item__content">
+                    <h3 class="habit-item__title">Чтение книг</h3>
+                    <p class="habit-item__category">Развитие</p>
+                    <div class="habit-item__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 90%"></div>
+                        </div>
+                        <span class="habit-item__progress-text">18/20 дней</span>
+                    </div>
+                </div>
+                <label for="screen-form" class="habit-item__edit" aria-label="Редактировать"><img src="icons/edit.svg" alt="Редактировать" class="icon"></label>
+            </article>
+
+            <article class="habit-item">
+                <div class="habit-item__checkbox-wrapper">
+                    <input type="checkbox" id="habit-3" class="habit-item__checkbox">
+                    <label for="habit-3" class="habit-item__checkbox-label"></label>
+                </div>
+                <div class="habit-item__icon habit-item__icon--mindfulness"><img src="icons/leaf.svg" alt="Медитация" class="icon"></div>
+                <div class="habit-item__content">
+                    <h3 class="habit-item__title">Медитация</h3>
+                    <p class="habit-item__category">Осознанность</p>
+                    <div class="habit-item__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 65%"></div>
+                        </div>
+                        <span class="habit-item__progress-text">13/20 дней</span>
+                    </div>
+                </div>
+                <label for="screen-form" class="habit-item__edit" aria-label="Редактировать"><img src="icons/edit.svg" alt="Редактировать" class="icon"></label>
+            </article>
+
+            <article class="habit-item habit-item--completed">
+                <div class="habit-item__checkbox-wrapper">
+                    <input type="checkbox" id="habit-4" class="habit-item__checkbox" checked>
+                    <label for="habit-4" class="habit-item__checkbox-label"></label>
+                </div>
+                <div class="habit-item__icon habit-item__icon--health"><img src="icons/utensils.svg" alt="Питание" class="icon"></div>
+                <div class="habit-item__content">
+                    <h3 class="habit-item__title">Здоровое питание</h3>
+                    <p class="habit-item__category">Здоровье</p>
+                    <div class="habit-item__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 100%"></div>
+                        </div>
+                        <span class="habit-item__progress-text">20/20 дней</span>
+                    </div>
+                </div>
+                <label for="screen-form" class="habit-item__edit" aria-label="Редактировать"><img src="icons/edit.svg" alt="Редактировать" class="icon"></label>
+            </article>
+
+            <article class="habit-item">
+                <div class="habit-item__checkbox-wrapper">
+                    <input type="checkbox" id="habit-5" class="habit-item__checkbox">
+                    <label for="habit-5" class="habit-item__checkbox-label"></label>
+                </div>
+                <div class="habit-item__icon habit-item__icon--health"><img src="icons/tint.svg" alt="Вода" class="icon"></div>
+                <div class="habit-item__content">
+                    <h3 class="habit-item__title">Пить воду (2 литра)</h3>
+                    <p class="habit-item__category">Здоровье</p>
+                    <div class="habit-item__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 45%"></div>
+                        </div>
+                        <span class="habit-item__progress-text">9/20 дней</span>
+                    </div>
+                </div>
+                <label for="screen-form" class="habit-item__edit" aria-label="Редактировать"><img src="icons/edit.svg" alt="Редактировать" class="icon"></label>
+            </article>
+
+            <article class="habit-item">
+                <div class="habit-item__checkbox-wrapper">
+                    <input type="checkbox" id="habit-6" class="habit-item__checkbox">
+                    <label for="habit-6" class="habit-item__checkbox-label"></label>
+                </div>
+                <div class="habit-item__icon habit-item__icon--productivity"><img src="icons/bullseye.svg" alt="Проект" class="icon"></div>
+                <div class="habit-item__content">
+                    <h3 class="habit-item__title">Работать над проектом</h3>
+                    <p class="habit-item__category">Работа</p>
+                    <div class="habit-item__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 30%"></div>
+                        </div>
+                        <span class="habit-item__progress-text">6/20 дней</span>
+                    </div>
+                </div>
+                <label for="screen-form" class="habit-item__edit" aria-label="Редактировать"><img src="icons/edit.svg" alt="Редактировать" class="icon"></label>
+            </article>
+        </div>
+    </section>
+
+
+    <section id="form" class="screen">
+        <header class="dashboard-header">
+            <div>
+                <h1 class="header__title">Добавить задачу</h1>
+                <p class="header__subtitle">Создайте новую полезную привычку</p>
+            </div>
+        </header>
+
+        <form class="habit-form">
+            <div class="form-group">
+                <label for="habit-name" class="form-label">Название привычки *</label>
+                <input type="text" id="habit-name" class="form-input" required 
+                       placeholder="Например: Читать 30 минут в день">
+                <span class="form-error">Это поле обязательно для заполнения</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Иконка</label>
+                <div class="icon-selector">
+                    <div class="icon-selector__grid">
+                        <label class="icon-selector__item">
+                            <input type="radio" name="habit-icon" value="icons/dumbbell.svg" class="icon-selector__input">
+                            <img src="icons/dumbbell.svg" alt="Спорт" class="icon-selector__icon" title="Спорт">
+                        </label>
+                        <label class="icon-selector__item">
+                            <input type="radio" name="habit-icon" value="icons/book-open.svg" class="icon-selector__input">
+                            <img src="icons/book-open.svg" alt="Чтение" class="icon-selector__icon" title="Чтение">
+                        </label>
+                        <label class="icon-selector__item">
+                            <input type="radio" name="habit-icon" value="icons/leaf.svg" class="icon-selector__input">
+                            <img src="icons/leaf.svg" alt="Медитация" class="icon-selector__icon" title="Медитация">
+                        </label>
+                        <label class="icon-selector__item">
+                            <input type="radio" name="habit-icon" value="icons/utensils.svg" class="icon-selector__input">
+                            <img src="icons/utensils.svg" alt="Питание" class="icon-selector__icon" title="Питание">
+                        </label>
+                        <label class="icon-selector__item">
+                            <input type="radio" name="habit-icon" value="icons/tint.svg" class="icon-selector__input">
+                            <img src="icons/tint.svg" alt="Вода" class="icon-selector__icon" title="Вода">
+                        </label>
+                        <label class="icon-selector__item">
+                            <input type="radio" name="habit-icon" value="icons/bullseye.svg" class="icon-selector__input">
+                            <img src="icons/bullseye.svg" alt="Цель" class="icon-selector__icon" title="Цель">
+                        </label>
+                        <label class="icon-selector__item">
+                            <input type="radio" name="habit-icon" value="icons/trophy.svg" class="icon-selector__input">
+                            <img src="icons/trophy.svg" alt="Достижение" class="icon-selector__icon" title="Достижение">
+                        </label>
+                        <label class="icon-selector__item">
+                            <input type="radio" name="habit-icon" value="icons/home.svg" class="icon-selector__input">
+                            <img src="icons/home.svg" alt="Дом" class="icon-selector__icon" title="Дом">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="habit-category" class="form-label">Категория *</label>
+                <div class="custom-dropdown">
+                    <input type="checkbox" id="dropdown-toggle" class="custom-dropdown__toggle">
+                    <label for="dropdown-toggle" class="custom-dropdown__button">
+                        <span class="custom-dropdown__selected custom-dropdown__selected--placeholder">Выберите категорию</span>
+                        <span class="custom-dropdown__selected-text"></span>
+                        <svg class="custom-dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </label>
+                    <div class="custom-dropdown__list">
+                        <label class="custom-dropdown__option">
+                            <input type="radio" name="habit-category" value="health" id="category-health" required>
+                            <span>Здоровье</span>
+                        </label>
+                        <label class="custom-dropdown__option">
+                            <input type="radio" name="habit-category" value="productivity" id="category-productivity" required>
+                            <span>Развитие</span>
+                        </label>
+                        <label class="custom-dropdown__option">
+                            <input type="radio" name="habit-category" value="mindfulness" id="category-mindfulness" required>
+                            <span>Осознанность</span>
+                        </label>
+                    </div>
+                </div>
+                <span class="form-error">Выберите категорию</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Частота *</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="frequency" value="daily" checked required>
+                        <span class="radio-option__label">Ежедневно</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="frequency" value="weekly" required>
+                        <span class="radio-option__label">Раз в неделю</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-option">
+                    <input type="checkbox" name="reminder">
+                    <span class="checkbox-option__label">Включить напоминания</span>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="habit-note" class="form-label">Заметка</label>
+                <textarea id="habit-note" class="form-textarea" rows="4" 
+                          placeholder="Дополнительная информация о привычке..."></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn--primary">Сохранить</button>
+                <label for="screen-dashboard" class="btn btn--secondary">Отменить</label>
+            </div>
+        </form>
+    </section>
+
+    <!-- Экран Profile -->
+    <section id="profile" class="screen">
+        <header class="dashboard-header">
+            <div>
+                <h1 class="header__title">Профиль</h1>
+                <p class="header__subtitle">Настройки аккаунта и приложения</p>
+            </div>
+        </header>
+
+        <form class="profile-form">
+            <div class="form-group">
+                <div class="avatar-wrapper">
+                    <div class="avatar"><img src="icons/user.svg" alt="Пользователь" class="icon"></div>
+                    <button type="button" class="avatar-edit-btn" title="Изменить фото">
+                        <img src="icons/camera.svg" alt="Камера" class="avatar-edit-icon icon">
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="profile-name" class="form-label">Имя пользователя *</label>
+                <input type="text" id="profile-name" class="form-input" value="Иван Иванов" required>
+            </div>
+
+            <div class="form-group">
+                <label for="profile-email" class="form-label">Email *</label>
+                <input type="email" id="profile-email" class="form-input" value="ivan.ivanov@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="profile-phone" class="form-label">Телефон</label>
+                <input type="tel" id="profile-phone" class="form-input" value="+7 (999) 123-45-67" 
+                       placeholder="+7 (___) ___-__-__">
+            </div>
+
+            <div class="form-group">
+                <label for="profile-motto" class="form-label">Мотивационная подпись</label>
+                <textarea id="profile-motto" class="form-textarea" rows="2" 
+                          placeholder="Ваше вдохновляющее сообщение...">Каждый день — это новая возможность стать лучше!</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="profile-goal" class="form-label">Главная цель</label>
+                <input type="text" id="profile-goal" class="form-input" 
+                       placeholder="Например: Быть здоровым и продуктивным">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn--primary">Сохранить изменения</button>
+                <button type="button" class="btn btn--danger">Сбросить все данные</button>
+            </div>
+        </form>
+
+        <div class="settings-section">
+            <h2 class="settings-title">Настройки уведомлений</h2>
+            <div class="settings-group">
+                <label class="checkbox-option">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-option__label">Ежедневные напоминания</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-option__label">Еженедельный отчёт</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox">
+                    <span class="checkbox-option__label">Достижения и рекорды</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-option__label">Email уведомления</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-option__label">Push уведомления</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h2 class="settings-title">Настройки приложения</h2>
+            <div class="settings-group">
+                <label class="checkbox-option">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-option__label">Отмечать выполненные привычки автоматически</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-option__label">Показывать прогресс в процентах</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-option__label">Показывать мотивационные сообщения</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h2 class="settings-title">Конфиденциальность</h2>
+            <div class="settings-group">
+                <label class="checkbox-option">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-option__label">Профиль виден другим пользователям</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox">
+                    <span class="checkbox-option__label">Показывать статистику публично</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox">
+                    <span class="checkbox-option__label">Позволять добавление в друзья</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h2 class="settings-title">Статистика аккаунта</h2>
+            <div class="account-stats">
+                <div class="account-stat-item">
+                    <span class="account-stat-label">Дата регистрации</span>
+                    <span class="account-stat-value">15 января 2024</span>
+                </div>
+                <div class="account-stat-item">
+                    <span class="account-stat-label">Всего дней активности</span>
+                    <span class="account-stat-value">156 дней</span>
+                </div>
+                <div class="account-stat-item">
+                    <span class="account-stat-label">Уровень</span>
+                    <span class="account-stat-value">Эксперт <img src="icons/trophy.svg" alt="Трофей" class="account-stat-trophy icon"></span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <h3 class="app-footer__title">О приложении</h3>
+            <p class="app-footer__text">
+                Habit Tracker v1.0 — простое и удобное приложение для отслеживания привычек. 
+                Помогает формировать полезные привычки и достигать личных целей.
+            </p>
+            <div class="app-footer__links">
+                <a href="#" class="footer-link">Помощь</a>
+                <span class="footer-divider">•</span>
+                <a href="#" class="footer-link">Пользовательское соглашение</a>
+                <span class="footer-divider">•</span>
+                <a href="#" class="footer-link">Политика конфиденциальности</a>
+            </div>
+            <p class="app-footer__copyright">© 2024 Habit Tracker. Все права защищены.</p>
+        </footer>
+    </section>
+</body>
+</html>
+
